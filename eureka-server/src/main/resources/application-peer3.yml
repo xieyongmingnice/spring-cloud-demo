@@ -1,0 +1,12 @@
+server:
+  port: 8083
+# eureka配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8082/eureka/
+  instance:
+    hostname: peer3
+spring:
+  application:
+    name: eureka-server
