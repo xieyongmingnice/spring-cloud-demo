@@ -1,0 +1,24 @@
+# eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    # 定义服务失效的时间，默认90s
+    lease-expiration-duration-in-seconds: 90
+    # 定义服务续约任务的调用间隔时间，默认30s
+    lease-renewal-interval-in-seconds: 30
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.66:3306/lsc_test?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: ydcpb66
+
+  jpa:
+    database: mysql
+    show-sql: true
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.phhc.dbmodule.entity
