@@ -11,6 +11,10 @@ eureka:
 # spring
 spring:
   application:
+    # 服务名称
     name: hello-orcas-service
 # 自定义
 hello: Hello World!
+# 日志配置文件路径
+logging:
+  path: classpath:logback.xml

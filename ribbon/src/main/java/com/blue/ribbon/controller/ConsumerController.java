@@ -1,13 +1,12 @@
 package com.blue.ribbon.controller;
 
+import com.blue.ribbon.service.HelloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @Author XieYongMing
@@ -17,12 +16,22 @@ import java.util.List;
 @RestController
 public class ConsumerController {
 
-    @Autowired
-    RestTemplate restTemplate;
+    private static Logger logger = LoggerFactory.getLogger(ConsumerController.class);
 
+    @Autowired
+    HelloService helloService;
+
+    /**
+     * 调用服务提供方的服务demo接口
+     * @return 调用结果
+     */
     @RequestMapping(value="/ribbon-consumer", method = RequestMethod.GET)
     public String helloConsumer(){
-        return restTemplate.getForEntity("http://HELLO-ORCAS-SERVICE/hello",String.class).getBody();
+        long start = System.currentTimeMillis();
+        String helloResult = helloService.hello();
+        long end = System.currentTimeMillis();
+        logger.info("耗时:{}ms",end - start);
+        return helloResult;
     }
 
 }
