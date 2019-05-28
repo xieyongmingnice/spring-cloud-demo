@@ -1,4 +1,4 @@
-package com.blue.orcas.common.indicator;
+package com.blue.orcas.indicator;
 
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
