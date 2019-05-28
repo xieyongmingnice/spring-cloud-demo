@@ -21,7 +21,8 @@
 		<!--	断路器	-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-hytrix</artifactId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>com.netflix.hystrix</groupId>
