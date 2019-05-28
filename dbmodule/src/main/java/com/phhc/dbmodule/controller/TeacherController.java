@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -27,12 +29,21 @@ public class TeacherController {
     public String addTeacher(){
 
         Teacher teacher=new Teacher();
-        teacher.setTeacherId(0001);
+        teacher.setTeacherId(10001);
         teacher.setTeacherName("张三");
         teacher.setSubjectId(18);
         teacherService.addTeacher(teacher);
         return "OK";
     }
+
+    @RequestMapping(value="/queryAll")
+    public String queryAll(){
+
+        List list=teacherService.queryAll();
+
+        return list.toString();
+    }
+
 
 }
 

@@ -1,10 +1,8 @@
 package com.phhc.dbmodule.service;
 
-import com.phhc.dbmodule.controller.TeacherController;
-import com.phhc.dbmodule.dao.jpa.TeacherRepository;
 import com.phhc.dbmodule.entity.Teacher;
-import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,6 +15,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 public interface ITeacherService {
 
 
+    /**
+     * 新增
+     * @param teacher
+     * @return
+     */
     int addTeacher(Teacher teacher);
+
+    /**
+     * 查询
+     * @return
+     */
+    List queryAll();
 
 }

@@ -19,6 +19,6 @@ import org.springframework.stereotype.Component;
 @Component(value = "userMapper")
 public interface UserMapper extends BaseMapper<User> {
 
-    IPage<Class> selectUser(Page page);
+    IPage<User> selectUser(Page page);
 
 }
