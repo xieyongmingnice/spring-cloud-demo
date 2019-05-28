@@ -9,7 +9,8 @@
 5、excel文件处理<br>
 6、上传下载<br>
 7、分页（mybatis-plus）<br>
-8、redis<br>
+8、redis  
+9、校验类
 
 
 
