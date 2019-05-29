@@ -23,6 +23,19 @@ public interface ITeacherService {
     int addTeacher(Teacher teacher);
 
     /**
+     * 删
+     * @param id
+     * @return
+     */
+    int deleteUserById(Integer id);
+
+    /**
+     * 改
+     * @param teacher
+     * @return
+     */
+    int updateUserById(Teacher teacher);
+    /**
      * 查询
      * @return
      */

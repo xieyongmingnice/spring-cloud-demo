@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -20,5 +22,7 @@ import org.springframework.stereotype.Component;
 public interface UserMapper extends BaseMapper<User> {
 
     IPage<User> selectUser(Page page);
+
+    List<User> selectUser();
 
 }

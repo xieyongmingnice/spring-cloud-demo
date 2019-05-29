@@ -1,12 +1,10 @@
 package com.phhc.dbmodule.controller;
 
-
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.phhc.dbmodule.entity.User;
 import com.phhc.dbmodule.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -26,6 +24,51 @@ public class UserController {
     @Autowired
     IUserService userService;
 
+    /**
+     * mybatis-plus:增
+     * @return
+     */
+    @RequestMapping(value = "/addUser")
+    public String addUser(){
+
+        for(int i=1;i<=50;i++){
+            User user=new User();
+            user.setUserId(10000+i);
+            user.setUserName("用户名"+i);
+            user.setPassword("password"+i);
+            userService.insert(user);
+        }
+        return "OK";
+    }
+
+    /**
+     * mybatis-plus:删
+     * @return
+     */
+    @RequestMapping(value = "/deleteUserById")
+    public String deleteUser(){
+        userService.deleteUserById(10001);
+        return "OK";
+    }
+
+    /**
+     * mybatis-plus:改
+     * @return
+     */
+    @RequestMapping(value = "/updateUserById")
+    public String updateUser(){
+        User user=new User();
+        user.setUserId(10001);
+        user.setUserName("狗蛋");
+        user.setPassword("9999");
+        userService.updateUserById(user);
+        return "OK";
+    }
+
+    /**
+     * mybatis-plus:查
+     * @return
+     */
     @RequestMapping(value = "/selectUserByPage")
     public String queryUser(){
 
@@ -37,19 +80,18 @@ public class UserController {
         return list.toString();
     }
 
-    @RequestMapping(value = "/addUser")
-    public String addUser(){
+    /**
+     * mybatis-plus:查
+     * @return
+     */
+    @RequestMapping(value = "/queryAllUser")
+    public String queryAllUser(){
 
-        for(int i=1;i<=50;i++){
-            User user=new User();
-            user.setUserId(10000+i);
-            user.setUserName("用户名"+i);
-            user.setPassword("password"+i);
-            userService.insert(user);
-        }
+        List list=userService.queryAllUser();
 
-        return "OK";
+        return list.toString();
     }
+
 
 
 }

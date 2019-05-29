@@ -19,4 +19,5 @@ public interface TeacherRepository extends
         Serializable,
         JpaRepository<Teacher, Integer> {
 
+    Teacher findByTeacherIdAndTeacherName(int id,String name);
 }

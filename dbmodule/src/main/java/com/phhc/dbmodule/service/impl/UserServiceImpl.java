@@ -33,8 +33,25 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
+    public List queryAllUser() {
+        return userMapper.selectUser();
+    }
+
+    @Override
     public int insert(User user) {
         userMapper.insert(user);
         return 0;
     }
+
+    @Override
+    public int deleteUserById(Integer id) {
+        return userMapper.deleteById(id);
+    }
+
+    @Override
+    public int updateUserById(User user) {
+        return userMapper.updateById(user);
+    }
+
+
 }

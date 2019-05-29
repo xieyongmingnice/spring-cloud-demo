@@ -16,8 +16,32 @@ import java.util.List;
  */
 public interface IUserService extends IService<User> {
 
-    List queryUser(Page page);
-
+    /**
+     * mybatis-plus:增
+     * @param user
+     * @return
+     */
     int insert(User user);
 
+    /**
+     * mybatis-plus:删
+     * @param id
+     * @return
+     */
+    int deleteUserById(Integer id);
+
+    /**
+     * mybatis-plus:改
+     * @return
+     */
+     int updateUserById(User user);
+
+    /**
+     * mybatis-plus:查
+     * @param page
+     * @return
+     */
+    List queryUser(Page page);
+
+    List queryAllUser();
 }
