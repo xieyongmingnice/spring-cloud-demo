@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,7 +48,7 @@ public class UserController {
      */
     @RequestMapping(value = "/deleteUserById")
     public String deleteUser(){
-        userService.deleteUserById(10001);
+        userService.deleteUserById(10003);
         return "OK";
     }
 
@@ -90,6 +91,16 @@ public class UserController {
         List list=userService.queryAllUser();
 
         return list.toString();
+    }
+
+    @RequestMapping(value = "/queryByIds")
+    public String queryByIds(){
+        List<Integer> list=new ArrayList<>();
+        list.add(10001);
+        list.add(10010);
+        list.add(10020);
+        list.add(10030);
+        return userService.queryByIds(list).toString();
     }
 
 

@@ -32,16 +32,23 @@ public interface IUserService extends IService<User> {
 
     /**
      * mybatis-plus:改
+     * @param user
      * @return
      */
      int updateUserById(User user);
 
     /**
-     * mybatis-plus:查
+     * mybatis-plus:分页查询
      * @param page
      * @return
      */
     List queryUser(Page page);
 
+    /**
+     * mybatis-plus:查
+     * @return
+     */
     List queryAllUser();
+
+    List queryByIds(List<Integer> list);
 }

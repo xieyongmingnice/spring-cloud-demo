@@ -3,12 +3,10 @@ package com.phhc.dbmodule.controller;
 import com.phhc.dbmodule.entity.Teacher;
 import com.phhc.dbmodule.service.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>
@@ -63,7 +61,7 @@ public class TeacherController {
         teacher.setTeacherId(10001);
         teacher.setTeacherName("dodo");
         teacher.setSubjectId(18);
-        teacherService.addTeacher(teacher);
+        teacherService.updateUserById(teacher);
         return "OK";
     }
 

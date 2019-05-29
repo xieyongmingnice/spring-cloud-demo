@@ -18,11 +18,20 @@ import java.util.List;
  * @since 2019-05-27
  */
 @Mapper
-@Component(value = "userMapper")
+@Component
 public interface UserMapper extends BaseMapper<User> {
 
+    /**
+     * 分页查找
+     * @param page
+     * @return
+     */
     IPage<User> selectUser(Page page);
 
+    /**
+     * 查找全部
+     * @return
+     */
     List<User> selectUser();
 
 }

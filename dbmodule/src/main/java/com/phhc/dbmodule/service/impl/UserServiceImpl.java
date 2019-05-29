@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,6 +36,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Override
     public List queryAllUser() {
         return userMapper.selectUser();
+    }
+
+    @Override
+    public List queryByIds(List<Integer> list) {
+        return userMapper.selectBatchIds(list);
     }
 
     @Override
